@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrepTrack Pro - Corporate Placement Portal</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================
+       PROFESSIONAL DESIGN SYSTEM & STYLES
+       ========================================== */
+    :root {
+      --primary-color: #1e3a8a;       /* Corporate Blue */
+      --primary-accent: #2563eb;      /* Vivid Blue */
+      --secondary-color: #0f172a;    /* Dark Navy */
+      --accent-green: #10b981;       /* Success Emerald */
+      --bg-body: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    /* Announcement Marquee Banner */
+    .top-banner {
+      background: var(--secondary-color);
+      color: #94a3b8;
+      padding: 0.5rem 0;
+      font-size: 0.85rem;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .banner-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .badge-live {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--accent-green);
+      padding: 0.15rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-right: 0.5rem;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      letter-spacing: -0.5px;
+    }
+
+    .logo i {
+      color: var(--primary-accent);
+      font-size: 1.6rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-accent);
+    }
+
+    .btn-portal {
+      background-color: var(--primary-color);
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+      transition: var(--transition);
+    }
+
+    .btn-portal:hover {
+      background-color: var(--primary-accent);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0 4rem;
+      background: radial-gradient(circle at 10% 20%, rgba(219, 234, 254, 0.5) 0%, rgba(255, 255, 255, 1) 90%);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--secondary-color);
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-text h1 span {
+      color: var(--primary-accent);
+    }
+
+    .hero-text p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--primary-accent);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-color);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border-color);
+      background: white;
+      color: var(--text-main);
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-body);
+      border-color: #cbd5e1;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 420px;
+      border-radius: var(--radius);
+      object-fit: cover;
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Stat Counter Badge */
+    .stat-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: white;
+      padding: 1.2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border: 1px solid var(--border-color);
+    }
+
+    .stat-badge i {
+      font-size: 2rem;
+      color: var(--accent-green);
+    }
+
+    .stat-number {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--secondary-color);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--secondary-color);
+      letter-spacing: -0.5px;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Target Companies Section */
+    .companies {
+      padding: 5rem 0;
+      background: white;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .company-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .company-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .company-card:hover {
+      border-color: var(--primary-accent);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .company-logo-wrap {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--bg-body);
+      border: 1px solid var(--border-color);
+      padding: 14px;
+    }
+
+    .company-logo-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .company-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 0.3rem;
+    }
+
+    .company-card .role-type {
+      font-size: 0.85rem;
+      color: var(--primary-accent);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .company-meta {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--border-color);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .company-meta strong {
+      color: var(--secondary-color);
+    }
+
+    /* Resources Section */
+    .resources {
+      padding: 5rem 0;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      border-color: #cbd5e1;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      background: #eff6ff;
+      color: var(--primary-accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--secondary-color);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .card-link {
+      color: var(--primary-accent);
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card-link:hover {
+      gap: 0.7rem;
+    }
+
+    /* Preparation Guidelines */
+    .guidelines {
+      padding: 5rem 0;
+      background: white;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .guidelines-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .guideline-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card-bg);
+      transition: var(--transition);
+    }
+
+    .guideline-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .guideline-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .guideline-content {
+      padding: 1.8rem;
+    }
+
+    .guideline-tag {
+      background: #f1f5f9;
+      color: var(--text-muted);
+      padding: 0.2rem 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .guideline-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0.6rem 0;
+      color: var(--secondary-color);
+    }
+
+    .guideline-content p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Training Schedules Section */
+    .schedules {
+      padding: 5rem 0;
+    }
+
+    .table-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1.2rem 1.8rem;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.95rem;
+    }
+
+    th {
+      background: #f8fafc;
+      color: var(--secondary-color);
+      font-weight: 700;
+    }
+
+    .status-tag {
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    .status-live {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .status-upcoming {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--secondary-color);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-brand p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col ul li a {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .stat-badge {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hero-text h1 {
+        font-size: 2.3rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BANNER -->
+  <div class="top-banner">
+    <div class="container banner-content">
+      <div>
+        <span class="badge-live">Notice</span>
+        Drive Registration open for <strong>Google & Microsoft</strong> placement rounds
+      </div>
+      <div><i class="fa-solid fa-phone"></i> T&P Cell Support: +1 (800) 555-0199</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-graduation-cap"></i> PrepTrack Pro
+      </a>
+      <ul class="nav-links">
+        <li><a href="#companies">Companies</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#guidelines">Guidelines</a></li>
+        <li><a href="#schedules">Schedules</a></li>
+        <li><a href="#" class="btn-portal"><i class="fa-solid fa-lock"></i> Student Portal Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Accelerate Your <span>Career Journey</span> & Land Top Offers</h1>
+        <p>Access structured preparation paths, real company interview insights, standardized practice assessments, and live skill bootcamps.</p>
+        <div class="hero-buttons">
+          <a href="#resources" class="btn-primary">Get Started Now</a>
+          <a href="#schedules" class="btn-secondary"><i class="fa-regular fa-calendar"></i> View Drive Schedule</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Students in technical training">
+        <div class="stat-badge">
+          <i class="fa-solid fa-circle-check"></i>
+          <div>
+            <span class="stat-number">94.2%</span>
+            <span class="stat-label">Placement Success Rate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TARGET COMPANIES SECTION -->
+  <section class="companies" id="companies">
+    <div class="container">
+      <div class="section-header">
+        <h2>Top Recruiting Partners</h2>
+        <p>Explore preparation patterns and eligibility for key corporate partners recruiting from our campus.</p>
+      </div>
+      <div class="company-grid">
+        
+        <!-- Google -->
+        <div class="company-card">
+          <div class="company-logo-wrap">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo">
+          </div>
+          <h3>Google</h3>
+          <span class="role-type">Software Engineer</span>
+          <div class="company-meta">
+            <div>Avg Package: <strong>32 LPA</strong></div>
+            <div>Rounds: <strong>5</strong></div>
+          </div>
+        </div>
+
+        <!-- Amazon -->
+        <div class="company-card">
+          <div class="company-logo-wrap">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg" alt="Amazon Logo">
+          </div>
+          <h3>Amazon</h3>
+          <span class="role-type">SDE-1 & Cloud</span>
+          <div class="company-meta">
+            <div>Avg Package: <strong>28 LPA</strong></div>
+            <div>Rounds: <strong>4</strong></div>
+          </div>
+        </div>
+
+        <!-- Microsoft -->
+        <div class="company-card">
+          <div class="company-logo-wrap">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo">
+          </div>
+          <h3>Microsoft</h3>
+          <span class="role-type">SWE & Consultant</span>
+          <div class="company-meta">
+            <div>Avg Package: <strong>26 LPA</strong></div>
+            <div>Rounds: <strong>4</strong></div>
+          </div>
+        </div>
+
+        <!-- IBM -->
+        <div class="company-card">
+          <div class="company-logo-wrap">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo">
+          </div>
+          <h3>IBM</h3>
+          <span class="role-type">Systems Engineer</span>
+          <div class="company-meta">
+            <div>Avg Package: <strong>12 LPA</strong></div>
+            <div>Rounds: <strong>3</strong></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PREPARATION RESOURCES -->
+  <section class="resources" id="resources">
+    <div class="container">
+      <div class="section-header">
+        <h2>Curated Learning Modules</h2>
+        <p>Comprehensive tracks tailored to pass technical screenings and HR assessments.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-code-merge"></i></div>
+          <h3>DSA & Algorithms</h3>
+          <p>Curated list of 250+ standard coding questions organized by difficulty and topic.</p>
+          <a href="#" class="card-link">Start Coding <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-calculator"></i></div>
+          <h3>Quantitative Aptitude</h3>
+          <p>Practice modules for logical reasoning, numerical ability, and verbal comprehension.</p>
+          <a href="#" class="card-link">Solve Questions <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-id-card"></i></div>
+          <h3>ATS Resume Builder</h3>
+          <p>Use pre-approved corporate resume formats designed to pass automatic parser filters.</p>
+          <a href="#" class="card-link">Create Resume <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
+          <h3>Mock Interviews</h3>
+          <p>Book 1-on-1 mock interview sessions with alumni and senior industry experts.</p>
+          <a href="#" class="card-link">Book Session <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREPARATION GUIDELINES -->
+  <section class="guidelines" id="guidelines">
+    <div class="container">
+      <div class="section-header">
+        <h2>Preparation Roadmaps</h2>
+        <p>Clear, action-oriented preparation roadmaps for technical and behavioral assessments.</p>
+      </div>
+      <div class="guidelines-grid">
+        <div class="guideline-card">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="Technical Prep">
+          <div class="guideline-content">
+            <span class="guideline-tag">Technical Track</span>
+            <h3>System Design & CS Core</h3>
+            <p>Master fundamental concepts in Database Management (DBMS), Operating Systems, Computer Networks, and Object-Oriented Programming.</p>
+          </div>
+        </div>
+        <div class="guideline-card">
+          <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=80" alt="Group Discussion Prep">
+          <div class="guideline-content">
+            <span class="guideline-tag">Soft Skills Track</span>
+            <h3>GD & Communication</h3>
+            <p>Develop structured thinking capabilities, body language awareness, and effective articulation for campus group discussion rounds.</p>
+          </div>
+        </div>
+        <div class="guideline-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="HR Interview Prep">
+          <div class="guideline-content">
+            <span class="guideline-tag">Interview Track</span>
+            <h3>Behavioral & HR Round</h3>
+            <p>Learn to framework responses using the STAR method (Situation, Task, Action, Result) to showcase leadership skills.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING SCHEDULES -->
+  <section class="schedules" id="schedules">
+    <div class="container">
+      <div class="section-header">
+        <h2>Upcoming Live Schedules</h2>
+        <p>Register for mandatory training bootcamps and placement drive timelines.</p>
+      </div>
+      <div class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Training Session</th>
+                <th>Instructor / Host</th>
+                <th>Schedule</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Dynamic Programming Masterclass</strong></td>
+                <td>Dr. A. R. Mehta (Ex-Google)</td>
+                <td>Aug 18, 2026 | 05:00 PM</td>
+                <td><span class="status-tag status-live">• Live Registration</span></td>
+                <td><a href="#" class="card-link">Register Now</a></td>
+              </tr>
+              <tr>
+                <td><strong>System Design Patterns & Microservices</strong></td>
+                <td>S. Ramanathan (Tech Lead)</td>
+                <td>Aug 21, 2026 | 06:30 PM</td>
+                <td><span class="status-tag status-upcoming">Upcoming</span></td>
+                <td><a href="#" class="card-link">Set Reminder</a></td>
+              </tr>
+              <tr>
+                <td><strong>Corporate HR Round Simulation</strong></td>
+                <td>Placement Cell Team</td>
+                <td>Aug 25, 2026 | 02:00 PM</td>
+                <td><span class="status-tag status-upcoming">Upcoming</span></td>
+                <td><a href="#" class="card-link">Set Reminder</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3><i class="fa-solid fa-graduation-cap"></i> PrepTrack Pro</h3>
+          <p>Official Training and Placement Cell Management Portal dedicated to student career success and skill advancement.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Portal Links</h4>
+          <ul>
+            <li><a href="#companies">Company Profiles</a></li>
+            <li><a href="#resources">Preparation Modules</a></li>
+            <li><a href="#guidelines">Study Roadmaps</a></li>
+            <li><a href="#schedules">Drive Schedule</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Student Support</h4>
+          <ul>
+            <li><a href="#">Eligibility Criteria Policy</a></li>
+            <li><a href="#">Placement Statistics Report</a></li>
+            <li><a href="#">Submit Grievance</a></li>
+            <li><a href="#">Helpdesk FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact T&P Office</h4>
+          <ul>
+            <li><a href="#"><i class="fa-solid fa-building"></i> Admin Block, 3rd Floor</a></li>
+            <li><a href="#"><i class="fa-solid fa-envelope"></i> placements@university.edu</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Training and Placement Cell. All Rights Reserved. Designed for University Placement Administration.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
